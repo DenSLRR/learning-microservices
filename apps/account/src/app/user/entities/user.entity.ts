@@ -1,4 +1,4 @@
-import { iUser, UserRole } from '@purple/interfaces';
+import { iUser, IUserCourses, UserRole } from '@purple/interfaces';
 
 import bcrypt from 'bcryptjs';
 
@@ -8,6 +8,7 @@ export class UserEntity implements iUser {
   passwordHash: string;
   email: string;
   role: UserRole;
+  courses?: IUserCourses[];
 
   constructor(user: iUser) {
     this._id = user._id;
@@ -15,6 +16,7 @@ export class UserEntity implements iUser {
     this.displayName = user.displayName;
     this.email = user.email;
     this.role = user.role;
+    this.courses = user.courses;
   }
   public async setPassword(password: string) {
     const salt = await bcrypt.genSalt(10);
