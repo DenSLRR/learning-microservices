@@ -1,6 +1,6 @@
 import { iUser, UserRole } from '@purple/interfaces';
-import * as bcrypt from 'bcrypt';
-import { compare } from 'bcrypt';
+
+import bcrypt from 'bcryptjs';
 
 export class UserEntity implements iUser {
   _id?: string;
@@ -11,6 +11,7 @@ export class UserEntity implements iUser {
 
   constructor(user: iUser) {
     this._id = user._id;
+    this.passwordHash = user.passwordHash;
     this.displayName = user.displayName;
     this.email = user.email;
     this.role = user.role;
@@ -24,6 +25,6 @@ export class UserEntity implements iUser {
   }
 
   public validatePassword(password: string) {
-    return compare(password, this.passwordHash);
+    return bcrypt.compare(password, this.passwordHash);
   }
 }

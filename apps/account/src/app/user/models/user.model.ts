@@ -1,9 +1,10 @@
 import { iUser, UserRole } from '@purple/interfaces';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export { Document } from 'mongoose';
+import { Document } from 'mongoose';
 
 @Schema()
+//@ts-ignore
 export class User extends Document implements iUser {
   @Prop()
   displayName: string;
