@@ -48,7 +48,11 @@
         "api-e2e/**/*",
         "api-e2e/**/*",
         "api-e2e/**/*",
-        "api-e2e/**/*"
+        "api-e2e/**/*",
+        "api-e2e/**/*",
+        "api-e2e/**/*",
+        "api-e2e/**/*",
+        "apps/api-e2e/**/*"
       ]
     }
   ]
