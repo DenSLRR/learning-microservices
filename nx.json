@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -37,7 +41,15 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/account-e2e/**/*"]
+      "exclude": [
+        "apps/account-e2e/**/*",
+        "api-e2e/**/*",
+        "apps-e2e/**/*",
+        "api-e2e/**/*",
+        "api-e2e/**/*",
+        "api-e2e/**/*",
+        "api-e2e/**/*"
+      ]
     }
   ]
 }
